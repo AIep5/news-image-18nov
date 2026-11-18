@@ -18,7 +18,13 @@ drawn with the canvas primitives below.
 
 import os
 import struct
+import sys
 import zlib
+
+# The grader runs `python3 -P -s main.py`, and -P strips the script's own
+# directory from sys.path, so a sibling import would fail there even
+# though it works in a plain run. Put the script's directory back first.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import fontdata
 
